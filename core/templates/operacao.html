@@ -1,0 +1,62 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Operações</title>
+    {% bootstrap_css %}
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-nav">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link" href="{% url 'upload' %}">Upload de Arquivo</a>
+        </div>
+      </nav>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header bg-secondary card text-center">
+                  <h4 class="card-title" style="color:white">Lista de Operações</h4>
+                </div>
+                <div class="card-body">
+                  <div class="card-content table-responsive">
+                    <table class="table table-striped table-hover datatables">
+                      <thead class=" text-primary">
+                        <tr>
+                            <th></th>
+                            <th>Loja</th>
+                            <th>Tipo</th>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Valor</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-secundary">
+                        {% for op in context %}
+                        {% csrf_token %}
+                        <tr>
+                            <td></td>
+                            <td> {{ op.loja }} </td>
+                            <td> {{ op.desc_operacao }} </td>
+                            <td> {{ op.data }} </td>
+                            <td> {{ op.hora }} </td>
+                            <td> {{ op.valor }} </td>
+                        </tr>
+                        {% endfor %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+</body>
+</html>

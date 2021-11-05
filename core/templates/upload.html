@@ -1,0 +1,50 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de Arquivo</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-nav">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link" href="{% url 'operacao' %}">Lista de Operações</a>
+        </div>
+    </nav>
+    <div class=container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header bg-secondary card text-center">
+                  <h4 class="card-title" style="color:white">Upload de Arquivo</h4>
+                </div>
+                <div class="card-body">
+                  <div class="card-content table-responsive">
+                    {% bootstrap_messages %}
+                    <form action="{% url 'upload' %}" method="post" class= "form" autocomplete="off" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="col-md-6">
+                            <h5 style="color:black">Selecione o arquivo:</h5>
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            {{form}}
+                        </div>
+                        <br>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+{% bootstrap_javascript jquery='full' %}
+
+</body>
+</html>
