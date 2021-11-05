@@ -16,7 +16,7 @@
    Se estiver utilizando linux é necessario instalar a libmysqlclient-dev:
      * $ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential `Debian / Ubuntu`
      * % sudo yum install python3-devel mysql-devel `Red Hat / CentOS`   
-   * pip install -r .\requirements.txt `{baixa as dependências do projeto}`
+   * pip install -r .\requirements.txt `baixa as dependências do projeto`
 
 4) Criar base de dados.
     * create database bycoders character set utf8;
