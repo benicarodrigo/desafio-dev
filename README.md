@@ -42,10 +42,10 @@
         ```
     
     * Executar os comandos para atualizar e migrar o modelo de dados do Django para o MySQL.
-        ```
+        
         * python manage.py makemigrations
         * python manage.py migrate
-        ```
+        
 
 # Rodar o Projeto
 1) Executar o comendo abaixo para rodar o projeto.    
@@ -54,14 +54,14 @@
 
 # Funcionamento do Projeto
 1) Foram criadas três páginas para o projeto.
-      * Página Home:
+      * Página Home:          
          - Link para a página upload do arquivo CNAB;
          - Link para a página lista de operações;
    
       * Página Upload de Arquivo:
           - Selecionar o arquivo CNAB.txt através do botão "Procurar..."
           - Clicar no botão "Enviar" para fazer o upload do arquivo e cadastrar os dados na base de dados.
-          - Clicar no link da página lista de operações, onde serão exibidas a lista de operações e saldo por loja.
+          - Clicar no link da página lista de operações, onde será exibida a lista de operações e saldo por loja.
   
      * Página Lista de Operações:
          - Página com lista das operações realizadas agrupadas por loja.
