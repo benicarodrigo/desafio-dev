@@ -41,10 +41,12 @@ def cadastrar_itens(requests, itens_loja, itens_operacao):
     try:
         lojas = [i for n, i in enumerate(itens_loja) if i not in itens_loja[n + 1:]]
         for item in lojas:
-            loja = Loja()
-            loja.nome = item['nome']
-            loja.proprietario = item['proprietario']
-            loja.save()
+            loja_id = Loja.objects.filter(nome=item['nome'])
+            if not loja_id:
+                loja = Loja()
+                loja.nome = item['nome']
+                loja.proprietario = item['proprietario']
+                loja.save()
 
         for item in itens_operacao:
             operacao = Operacao()
