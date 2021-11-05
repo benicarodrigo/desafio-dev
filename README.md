@@ -18,13 +18,14 @@
      * % sudo yum install python3-devel mysql-devel `Red Hat / CentOS`   
    * pip install -r .\requirements.txt `baixa as dependências do projeto`
 
-4) Criar base de dados.
-    * create database bycoders character set utf8;
-    * create user 'bycoders'@'localhost' identified by 'bycoders#123';
-    * grant all privileges on bycoders.* to bycoders@'localhost';
-    * grant all privileges on test_bycoders.* to bycoders@'localhost'; `aplicar o privilégio na base de testes automatizados`
+4) Criar base de dados no MySQL.
+    * Entrar no terminal do MySQL e executar os comandos:
+        - create database bycoders character set utf8;
+        - create user 'bycoders'@'localhost' identified by 'bycoders#123';
+        - grant all privileges on bycoders.* to bycoders@'localhost';
+        - grant all privileges on test_bycoders.* to bycoders@'localhost'; `aplicar o privilégio na base de testes automatizados`
 
-5) Configurar base de dados:
+5) Configurar base de dados no projeto Django:
 
     * Configurar conexão com a base de dados no arquivo settings.py.  
         ```
